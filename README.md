@@ -1,8 +1,7 @@
-# HTML Maps
-* Projects realized during script languages labs.
-* Written in **HTML** with usage of **JavaScript**.
-* **Map** - usage of markers, circle and polyglon.
-* **Map_2** - usage of **JSON**.
+# Maps
+* **HTML, Javascript, Leaflet library**<br/>
+* **Map** - usage of markers, circle and polyglon<br/>
+* **Map_2** - usage of JSON<br/>
 
 ![Picture map](https://github.com/KarolinaLewinska/HTML_Maps/blob/master/Map.PNG)
 
