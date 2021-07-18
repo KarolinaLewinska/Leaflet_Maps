@@ -1,13 +1,13 @@
 <html>
 	<head>
-		<style type="text/css"> #map { height: 100%; }</style>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+		<style> #map { height: 100%; }</style>
 	</head>
 	<body>
 		<div id="map"></div>
 	</body>
-	<script type="text/javascript">
+	<script>
 		const map = L.map('map').setView([54.445184, 18.554771], 16);
 		const popup = L.popup();
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -50,8 +50,9 @@
 			[54.44437,18.555409]
 		]).addTo(map).bindPopup("Parking dla uczniów");
 
+		map.on('click', onMapClick);	
+		
 		function onMapClick(e) {
 			popup.setLatLng(e.latlng).setContent(e.latlng.toString()).openOn(map);
 		}
-		map.on('click', onMapClick);	
 	</script>

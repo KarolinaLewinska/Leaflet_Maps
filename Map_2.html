@@ -1,14 +1,14 @@
 <html>
 	<head>
-		<style type="text/css">#map { height: 100%; }</style>
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+		<style> #map { height: 100%; }</style>
 	</head>
 	<body>
 		<div id="map"></div>
 	</body>
 </html>
-<script type="text/javascript">	
+<script>	
 	const map = L.map('map').setView([54.445184, 18.554771], 2);
 	const popup = L.popup();
 	var req = new XMLHttpRequest(); 
@@ -21,12 +21,12 @@
 		id: 'mapbox.streets'
 	}).addTo(map);
 
+	map.on('click', onMapClick);
+	
 	function onMapClick(e) {
 		popup.setLatLng(e.latlng).setContent(e.latlng.toString()).openOn(map);
 	}
 
-	map.on('click', onMapClick);
-                              
 	req.open('GET', 'https://jsonplaceholder.typicode.com/users');
 	req.onload = function() {
 		var data = JSON.parse(req.responseText);
